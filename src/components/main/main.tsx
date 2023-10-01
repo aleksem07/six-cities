@@ -1,9 +1,9 @@
-import MainProps from './main.types';
+import OfferCountProps from '../../types/offer-count.types';
 import Cities from '../cities/cities';
 import Header from '../header/header';
 import Tabs from '../tabs/tabs';
 
-function Main({offerCount}: MainProps): JSX.Element {
+function Main({offerCount}: OfferCountProps): JSX.Element {
   return (
     <div className='page page--gray page--main'>
       <Header />

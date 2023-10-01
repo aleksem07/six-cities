@@ -1,7 +1,7 @@
 import Main from '../main/main';
-import AppProps from './app.types';
+import OfferCountProps from '../../types/offer-count.types';
 
-function App({offerCount}: AppProps): JSX.Element {
+function App({offerCount}: OfferCountProps): JSX.Element {
   return <Main offerCount={offerCount}/>;
 }
 
