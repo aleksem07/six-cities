@@ -1,7 +1,8 @@
-import StartPage from '../start-page/start-page';
+import Main from '../main/main';
+import AppProps from './app.types';
 
-function App(): JSX.Element {
-  return <StartPage />;
+function App({offerCount}: AppProps): JSX.Element {
+  return <Main offerCount={offerCount}/>;
 }
 
 export default App;
