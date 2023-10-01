@@ -1,7 +1,4 @@
-type LocationProps = {
-  city: string;
-  active?: boolean;
-}
+import LocationProps from './location.types';
 
 function Location ({city, active}: LocationProps): JSX.Element {
   return (

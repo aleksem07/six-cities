@@ -1,3 +1,4 @@
+import Cities from '../cities/cities';
 import Header from '../header/header';
 import Tabs from '../tabs/tabs';
 
@@ -8,6 +9,7 @@ function StartPage(): JSX.Element {
       <main className='page__main page__main--index'>
         <h1 className='visually-hidden'>Cities</h1>
         <Tabs />
+        <Cities />
       </main>
 
     </div>
