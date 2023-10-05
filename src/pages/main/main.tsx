@@ -1,7 +1,7 @@
 import OfferCountProps from '../../types/offer-count.types';
-import Cities from '../cities/cities';
-import Header from '../header/header';
-import Tabs from '../tabs/tabs';
+import Cities from '../../components/cities/cities';
+import Header from '../../components/header/header';
+import Tabs from '../../components/tabs/tabs';
 
 function Main({offerCount}: OfferCountProps): JSX.Element {
   return (
