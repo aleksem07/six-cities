@@ -4,7 +4,7 @@ export enum Settings {
 
 export enum AppRoute {
   Root = '/',
-  Login = 'login',
+  Login = '/login',
   Favorites = '/favorites',
   Offer = '/offer',
   Page404 = '*',

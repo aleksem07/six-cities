@@ -1,23 +1,13 @@
-// import React from 'react';
-// import { Route, Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { AppRoute } from '../../const';
+import { PrivateRouteProps } from './private-route.types';
+import { AuthStatus } from '../../const';
 
-export type Component = {
-  component: string;
-}
+const PrivateRoute = ({ authStatus, children }: PrivateRouteProps) =>
+  authStatus === AuthStatus.Auth ? (
+    children as JSX.Element
+  ) : (
+    <Navigate to={AppRoute.Login} replace />
+  );
 
-// const hasAccess = false;
-
-// const PrivateRoute = ({ component: Component, ...rest }) => (
-//   <Route
-//     {...rest}
-//     render={(props) => {
-//       if (!hasAccess) {
-//         return <Component {...props} />;
-//       }
-//       return <Redirect to="/login" />;
-//     }}
-//   />
-// );
-
-// export default PrivateRoute;
-
+export default PrivateRoute;
