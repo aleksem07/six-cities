@@ -2,30 +2,44 @@ import Main from '../../pages/main-page/main';
 import Login from '../../pages/login-page/login';
 import OfferCountProps from '../../types/offer-count.types';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AppRoute } from './app.types';
+import { AppRoute } from '../../const';
 import FavoritesEmpty from '../../pages/favorites-empty-page/favorites-empty';
 import Page404 from '../../pages/page404-page/page404';
 import Property from '../../pages/property-page/property';
+import MainEmpty from '../../pages/main-empty-page/main-empty';
+import Favorites from '../../pages/favorites-page/favorites';
+import Layout from '../layout/layout';
 
 function App({offerCount}: OfferCountProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={AppRoute.Main}
-          element={<Main offerCount={offerCount} />}
-        />;
-        <Route path={AppRoute.SignIn}
-          element={<Login />}
-        />;
-        <Route path={AppRoute.Favorites}
-          element={<FavoritesEmpty />}
-        />;
-        <Route path={AppRoute.Room}
-          element={<Property />}
-        />;
-        <Route path={AppRoute.Page404}
-          element={<Page404 />}
-        />
+        <Route path={AppRoute.Root} element={<Layout />}>
+          <Route index
+            element={<Main offerCount={offerCount} />}
+          />;
+          <Route path={AppRoute.DevRoot}
+            element={<MainEmpty />}
+          />;
+          <Route path={AppRoute.Login}
+            element={<Login />}
+          />;
+          <Route path={AppRoute.Favorites}
+            element={<Favorites />}
+          />;
+          <Route path={AppRoute.DevFavorites}
+            element={<FavoritesEmpty />}
+          />;
+          <Route path={AppRoute.Offer}
+            element={<Property />}
+          />;
+          <Route path={AppRoute.DevOffer}
+            element={<Property />}
+          />;
+          <Route path={AppRoute.Page404}
+            element={<Page404 />}
+          />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
