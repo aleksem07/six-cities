@@ -3,5 +3,5 @@ export enum AppRoute {
   SignIn = '/login',
   Favorites = '/favorites',
   Room = '/offer/:id',
-  Page404 = '/page404',
+  Page404 = '*',
 }

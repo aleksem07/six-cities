@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppRoute } from './app.types';
 import FavoritesEmpty from '../../pages/favorites-empty-page/favorites-empty';
 import Page404 from '../../pages/page404-page/page404';
+import Property from '../../pages/property-page/property';
 
 function App({offerCount}: OfferCountProps): JSX.Element {
   return (
@@ -19,7 +20,12 @@ function App({offerCount}: OfferCountProps): JSX.Element {
         <Route path={AppRoute.Favorites}
           element={<FavoritesEmpty />}
         />;
-        <Route path={AppRoute.Page404} element={<Page404 />}/>
+        <Route path={AppRoute.Room}
+          element={<Property />}
+        />;
+        <Route path={AppRoute.Page404}
+          element={<Page404 />}
+        />
       </Routes>
     </BrowserRouter>
   );
