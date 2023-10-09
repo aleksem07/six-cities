@@ -1,7 +1,7 @@
-import CitiesProps from './cities.types';
+import OfferCountProps from '../../types/offer-count.types';
 import PlaceCard from '../place-card/place-card';
 
-function Cities({offerCount}: CitiesProps): JSX.Element {
+function Cities({offerCount}: OfferCountProps): JSX.Element {
   return (
     <div className='cities'>
       <div className="cities__places-container container">

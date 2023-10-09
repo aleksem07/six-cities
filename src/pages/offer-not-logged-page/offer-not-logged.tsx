@@ -6,7 +6,7 @@ const spanStyle = {
   width: '80%',
 };
 
-function PropertyNotLogged () {
+function OfferNotLogged () {
   return (
     <main className="page__main page__main--property">
       <section className="property">
@@ -264,4 +264,4 @@ function PropertyNotLogged () {
   );
 }
 
-export default PropertyNotLogged;
+export default OfferNotLogged;
