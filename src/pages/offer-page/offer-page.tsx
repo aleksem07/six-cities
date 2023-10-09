@@ -6,7 +6,7 @@ const spanStyle = {
   width: '80%',
 };
 
-function Property () {
+function OfferPage () {
   return (
     <main className="page__main page__main--property">
       <section className="property">
@@ -310,4 +310,4 @@ function Property () {
   );
 }
 
-export default Property;
+export default OfferPage;
