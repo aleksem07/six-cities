@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
+
 function Page404 (): JSX.Element {
   return (
     <main className="page__main page__main--page404">
@@ -7,7 +10,14 @@ function Page404 (): JSX.Element {
         <span className="page404__text">Page not found</span>
       </p>
       <p className="page404__caption">Sorry, we couldn’t find what you were looking for.</p>
-      <a className="page404__link" href="/">Back to homepage</a>
+
+      <section className="locations locations--login locations--current">
+        <div className="locations__item">
+          <Link className="locations__item-link" to={AppRoute.Root}>
+            <span>Back to homepage</span>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
