@@ -1,6 +1,6 @@
 import Main from '../../pages/main-page/main';
 import Login from '../../pages/login-page/login';
-import OfferCountProps from '../../types/offer-count.types';
+import { OfferCountProps } from '../../types/offer-count.types';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppRoute, AuthStatus } from '../../const';
 import FavoritesEmpty from '../../pages/favorites-empty-page/favorites-empty';
@@ -12,13 +12,13 @@ import Layout from '../layout/layout';
 import PrivateRoute from '../private-route/private-route';
 import OfferNotLogged from '../../pages/offer-not-logged-page/offer-not-logged';
 
-function App({offerCount}: OfferCountProps): JSX.Element {
+function App({offerCount, offers}: OfferCountProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route path={AppRoute.Root} element={<Layout />}>
           <Route index
-            element={<Main offerCount={offerCount} />}
+            element={<Main offerCount={offerCount} offers={offers} />}
           />;
           <Route path={AppRoute.DevRoot}
             element={<MainEmpty />}

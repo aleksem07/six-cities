@@ -1,4 +1,4 @@
-import PlaceCardProps from './place-card.types';
+import { PlaceCardProps } from './place-card.types';
 
 const spanStyle = {
   width: '80%'

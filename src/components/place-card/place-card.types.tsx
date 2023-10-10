@@ -6,5 +6,3 @@ export type PlaceCardProps = {
   cardName: string;
   apartment?: boolean;
 }
-
-export default PlaceCardProps;

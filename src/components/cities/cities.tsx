@@ -1,7 +1,7 @@
-import OfferCountProps from '../../types/offer-count.types';
+import { OfferCountProps } from '../../types/offer-count.types';
 import PlaceCard from '../place-card/place-card';
 
-function Cities({offerCount}: OfferCountProps): JSX.Element {
+function Cities({offerCount, offers}: OfferCountProps): JSX.Element {
   return (
     <div className='cities'>
       <div className="cities__places-container container">
@@ -25,7 +25,7 @@ function Cities({offerCount}: OfferCountProps): JSX.Element {
           </form>
           <div className="cities__places-list places__list tabs__content">
 
-            <PlaceCard premium img="img/apartment-01.jpg" price="120" cardName='Beautiful &amp; luxurious apartment at great location' apartment/>
+            <PlaceCard premium img={offers[0].previewImage} price="120" cardName='Beautiful &amp; luxurious apartment at great location' apartment/>
             <PlaceCard img="img/room.jpg" price="80" bookmarks cardName='Wood and stone place'/>
             <PlaceCard img="img/apartment-02.jpg" price="132" cardName='Canal View Prinsengracht' apartment/>
             <PlaceCard premium img="img/apartment-03.jpg" price="180" cardName='Nice, cozy, warm big bed apartment' />

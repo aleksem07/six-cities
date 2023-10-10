@@ -1,6 +1,6 @@
 import { Offer } from './offers.types';
 
-export const offers: Offer[] = [
+export const OFFERS: Offer[] = [
   {
     id:  `${Date.now()}`,
     title: 'Beautiful luxurious apartment at great location',
