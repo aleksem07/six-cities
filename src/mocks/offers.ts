@@ -2,7 +2,7 @@ import { Offer } from './offers.types';
 
 export const OFFERS: Offer[] = [
   {
-    id:  `${Date.now()}`,
+    id: setTimeout(() => `${Date.now()}`, 0) as unknown as string,
     title: 'Beautiful luxurious apartment at great location',
     type: 'apartment',
     price: 120,
@@ -25,7 +25,7 @@ export const OFFERS: Offer[] = [
     isFavorite: true,
   },
   {
-    id:  `${Date.now()}`,
+    id: setTimeout(() => `${Date.now()}`, 0) as unknown as string,
     title: 'Wood and stone place',
     type: 'house',
     price: 80,
@@ -48,7 +48,7 @@ export const OFFERS: Offer[] = [
     isFavorite: false,
   },
   {
-    id: '2186b3e2-db83-4627-be97-2632937550c7',
+    id: setTimeout(() => `${Date.now()}`, 0) as unknown as string,
     title: 'Wood and stone place',
     type: 'hotel',
     price: 192,
@@ -71,7 +71,7 @@ export const OFFERS: Offer[] = [
     rating: 3.5,
   },
   {
-    id: '68eabb8a-fa4a-400d-8826-5f3039a37707',
+    id: setTimeout(() => `${Date.now()}`, 0) as unknown as string,
     title: 'Canal View Prinsengracht',
     type: 'hotel',
     price: 453,

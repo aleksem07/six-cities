@@ -1,11 +1,14 @@
 import { SyntheticEvent, useState } from 'react';
 import { OfferCardProps } from './offer-card.types';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
-const spanStyle = {
-  width: '80%'
+const calcRating = (rating: number): number => {
+  const MAX_RATING = 5;
+  return rating * 100 / MAX_RATING;
 };
 
-export const OfferCard = ({offer}: OfferCardProps): JSX.Element => {
+export const OfferCard = ({offer, onOfferHover}: OfferCardProps): JSX.Element => {
   const [isOfferFavorite, setIsOfferFavorite] = useState(offer.isFavorite);
   const handleFavoriteClick = (evt: SyntheticEvent) => {
     evt.preventDefault();
@@ -15,7 +18,7 @@ export const OfferCard = ({offer}: OfferCardProps): JSX.Element => {
 
   return (
 
-    <article className="cities__place-card place-card">
+    <article className="cities__place-card place-card" onMouseOver={() => onOfferHover(offer.id)}>
       {offer.isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
@@ -47,12 +50,12 @@ export const OfferCard = ({offer}: OfferCardProps): JSX.Element => {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={spanStyle}></span>
+            <span style={{ width: `${calcRating(offer.rating)}%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="/">{offer.title}</a>
+          <Link to={`${AppRoute.Offer}/${offer.id}`}>{offer.title}</Link>
         </h2>
         <p className="place-card__type">{offer.type}</p>
       </div>
