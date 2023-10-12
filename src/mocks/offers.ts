@@ -22,7 +22,7 @@ export const OFFERS: Offer[] = [
     },
     isPremium: false,
     rating: 4,
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id:  `${Date.now()}`,

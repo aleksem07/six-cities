@@ -1,7 +1,3 @@
-export enum Settings {
-  Offers = 123,
-}
-
 export enum AppRoute {
   Root = '/',
   Login = '/login',
