@@ -1,34 +1,37 @@
 import { SyntheticEvent, useState } from 'react';
 import { OfferCardProps } from './offer-card.types';
 import { Link } from 'react-router-dom';
-import { AppRoute } from '../../const';
+import { AppRoute, OfferCardType } from '../../const';
 
 const calcRating = (rating: number): number => {
   const MAX_RATING = 5;
   return rating * 100 / MAX_RATING;
 };
 
-export const OfferCard = ({offer, onOfferHover}: OfferCardProps): JSX.Element => {
+export const OfferCard = ({offer, onOfferHover, cardType = OfferCardType.Cities}: OfferCardProps): JSX.Element => {
   const [isOfferFavorite, setIsOfferFavorite] = useState(offer.isFavorite);
   const handleFavoriteClick = (evt: SyntheticEvent) => {
     evt.preventDefault();
 
     setIsOfferFavorite((prevIsOfferFavorite) => !prevIsOfferFavorite);
   };
+  const cardTypeClassName = cardType === OfferCardType.Cities ?
+    OfferCardType.Cities :
+    OfferCardType.Favorites;
 
   return (
 
-    <article className="cities__place-card place-card" onMouseOver={() => onOfferHover(offer.id)}>
+    <article className={`${cardTypeClassName}__card place-card`} onMouseOver={() => onOfferHover(offer.id)}>
       {offer.isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
         </div> )}
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className={`${cardTypeClassName}__image-wrapper place-card__image-wrapper`}>
         <a href="/">
           <img className="place-card__image" src={offer.previewImage} width="260" height="200" alt="Place img" />
         </a>
       </div>
-      <div className="place-card__info">
+      <div className={`${cardTypeClassName}__card-info place-card__info`}>
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
             <b className="place-card__price-value">&euro;{offer.price}</b>
