@@ -1,7 +1,3 @@
-export enum Settings {
-  Offers = 123,
-}
-
 export enum AppRoute {
   Root = '/',
   Login = '/login',
@@ -17,4 +13,9 @@ export enum AuthStatus {
   Auth = 'AUTH',
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
+}
+
+export enum OfferCardType {
+  Cities = 'cities',
+  Favorites = 'favorites',
 }

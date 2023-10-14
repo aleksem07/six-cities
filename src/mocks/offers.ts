@@ -1,14 +1,14 @@
 import { Offer } from './offers.types';
 
-export const offers: Offer[] = [
+export const OFFERS: Offer[] = [
   {
-    id:  `${Date.now()}`,
+    id: setTimeout(() => `${Date.now()}`, 0) as unknown as string,
     title: 'Beautiful luxurious apartment at great location',
     type: 'apartment',
     price: 120,
     previewImage: '../img/apartment-01.jpg',
     city: {
-      name: 'Paris',
+      name: 'Amsterdam',
       location: {
         latitude: 48.856614,
         longitude: 2.352222,
@@ -22,10 +22,10 @@ export const offers: Offer[] = [
     },
     isPremium: false,
     rating: 4,
-    isFavorite: false,
+    isFavorite: true,
   },
   {
-    id:  `${Date.now()}`,
+    id: setTimeout(() => `${Date.now()}`, 0) as unknown as string,
     title: 'Wood and stone place',
     type: 'house',
     price: 80,
@@ -45,10 +45,10 @@ export const offers: Offer[] = [
     },
     isPremium: true,
     rating: 2.5,
-    isFavorite: false,
+    isFavorite: true,
   },
   {
-    id: '2186b3e2-db83-4627-be97-2632937550c7',
+    id: setTimeout(() => `${Date.now()}`, 0) as unknown as string,
     title: 'Wood and stone place',
     type: 'hotel',
     price: 192,
@@ -71,7 +71,7 @@ export const offers: Offer[] = [
     rating: 3.5,
   },
   {
-    id: '68eabb8a-fa4a-400d-8826-5f3039a37707',
+    id: setTimeout(() => `${Date.now()}`, 0) as unknown as string,
     title: 'Canal View Prinsengracht',
     type: 'hotel',
     price: 453,

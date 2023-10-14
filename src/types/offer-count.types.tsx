@@ -1,5 +1,5 @@
-type OfferCountProps = {
-  offerCount: number;
-}
+import { Offer } from '../mocks/offers.types';
 
-export default OfferCountProps;
+export type AppProps = {
+  offers: Offer[];
+}

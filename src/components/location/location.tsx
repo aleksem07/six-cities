@@ -1,4 +1,4 @@
-import LocationProps from './location.types';
+import { LocationProps } from './location.types';
 
 function Location ({city, active}: LocationProps): JSX.Element {
   return (
