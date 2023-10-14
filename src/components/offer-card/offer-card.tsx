@@ -2,6 +2,7 @@ import { SyntheticEvent, useState } from 'react';
 import { OfferCardProps } from './offer-card.types';
 import { Link } from 'react-router-dom';
 import { AppRoute, OfferCardType } from '../../const';
+import styles from './offer-card.module.css';
 
 const calcRating = (rating: number): number => {
   const MAX_RATING = 5;
@@ -18,15 +19,18 @@ export const OfferCard = ({offer, onOfferHover, cardType = OfferCardType.Cities}
   const cardTypeClassName = cardType === OfferCardType.Cities ?
     OfferCardType.Cities :
     OfferCardType.Favorites;
+  const cardImageClassName = cardType === OfferCardType.Cities ?
+    `${styles['cities__card-info']}` :
+    `${styles['favorites__card-info']}`;
 
   return (
 
-    <article className={`${cardTypeClassName}__card place-card`} onMouseOver={() => onOfferHover(offer.id)}>
+    <article className={`${cardTypeClassName}__card place-card`} onMouseOver={() => onOfferHover && onOfferHover(offer.id)}>
       {offer.isPremium && (
         <div className="place-card__mark">
           <span>Premium</span>
         </div> )}
-      <div className={`${cardTypeClassName}__image-wrapper place-card__image-wrapper`}>
+      <div className={`${cardImageClassName} place-card__image-wrapper`}>
         <a href="/">
           <img className="place-card__image" src={offer.previewImage} width="260" height="200" alt="Place img" />
         </a>

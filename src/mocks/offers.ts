@@ -8,7 +8,7 @@ export const OFFERS: Offer[] = [
     price: 120,
     previewImage: '../img/apartment-01.jpg',
     city: {
-      name: 'Paris',
+      name: 'Amsterdam',
       location: {
         latitude: 48.856614,
         longitude: 2.352222,
@@ -45,7 +45,7 @@ export const OFFERS: Offer[] = [
     },
     isPremium: true,
     rating: 2.5,
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id: setTimeout(() => `${Date.now()}`, 0) as unknown as string,
